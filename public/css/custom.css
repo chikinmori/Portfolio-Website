@@ -1,0 +1,55 @@
+.navbar{
+	padding-top: 5px;
+	padding-bottom:5px;
+	border:0;
+	border-radius:0;
+	margin-bottom:0;
+	position:absolute;
+	width:100%;
+	max-width:100%;
+	z-index:10; 
+}
+#aboutMe{
+	margin-top:200px;
+	margin-bottom:200px;
+}
+#myCarousel{
+	margin-bottom:70px;
+	background-color:#080808;
+}
+#myFooter{
+	margin-top:100px;
+	padding-top:40px;
+	padding-bottom:40px;
+	width:100%;
+	border:0;
+	border-radius:0;
+	margin-bottom:0;
+    background-color: #222;
+    border-color: #080808;
+}
+#projects{
+	margin: 70px;
+}
+.viewImage{
+	padding-top: 100px;
+}
+.img-entry{
+	width:600px;
+	height: 450px;
+}
+.carousel-caption {
+    left: 5%;
+    text-align: left;
+    max-width: 500px;
+    right: auto;
+    padding:5px;
+}
+
+body{
+	font-size:17px;
+}
+
+hr{
+	width:1000px;
+}

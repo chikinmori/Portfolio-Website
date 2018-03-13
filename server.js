@@ -1,9 +1,9 @@
 var express = require("express");
 var app = express();
 var router = express.Router();
-var path = __dirname + "/";
+var path = __dirname + "/view/";
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 app.set("port", process.env.PORT || 3000);
 
@@ -13,7 +13,19 @@ router.use(function (req,res,next) {
 });
 
 router.get("/",function(req,res){
-	res.sendFile(path + "view/index.html");
+	res.sendFile(path + "index.html");
+});
+
+router.get("/trickytreats",function(req,res){
+	res.sendFile(path + "trickytreats.html");
+});
+
+router.get("/trickytreatsold",function(req,res){
+	res.sendFile(path + "trickytreatsold.html");
+});
+
+router.get("/tinyroom",function(req,res){
+	res.sendFile(path + "tinyroom.html");
 });
 
 app.use("/",router);

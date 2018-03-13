@@ -5,41 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/custom.css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+	<script src="js/app.js"></script>
 	
-    <title>{{firstname}} {{lastname}}'s Portfolio</title>
+    <title>Jana Austria's Portfolio</title>
 	
   </head>
   <body>
 	<nav id="myNav" class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">{{firstname}} {{lastname}}</a>
+				<a class="navbar-brand" href="#">Jana Austria</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Games</a>
-					<ul class="dropdown-menu">
-						<li><a href="/trickytreats">Tricky Treats</a></li>
-						<li><a href="/tinyroom">Tiny Room</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Illustrations</a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Fable Friends</a></li>
-					</ul>
-				</li>
+				<li><a href="#Projects">Projects</a></li>
 				<li><a href="#">Contact</a></li>
 				
 			</ul>
 		</div>
 	</nav>
-	<div id="main" ng-controller="ViewController">
-		<div ng-if="!viewMode">
+	<ng-view>
+	<div id="main">
+		<div>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -48,19 +40,23 @@
 
 				<div class="carousel-inner">
 				<div class="item active">
-					<img src="img/ggj.png" alt="Red's Adventure" style="width:100%">
+					<a href="#RedsAdventure">
+					<img src="img/ggj.png" alt="Red's Adventure">
 						<div class="carousel-caption">
 				        	<h3>Red's Adventure</h3>
-				        	<p>Little Red has to team up with her friends to survive the never ending nightmare. {{ 6+2}}</p>
+				        	<p>An action game made in Unity for the Global Game Jam 2018.  Assets were made in Clip Studio Paint and animated using Unity. </p>
 				      	</div>
+				    </a>
 				</div>
 				
 				<div class="item">
-					<img src="img/ff.png" alt="Fable Friends">
+					<a href="#TrickyTreats">
+					<img src="img/tt2.png" alt="Fable Friends">
 					<div class="carousel-caption">
-				        	<h3>Fable Friends</h3>
-				        	<p>A collection of character designs inspired from halloween characters.</p>
+				        	<h3>Tricky Treats</h3>
+				        	<p>Help the alchemist gather ingredients from the forest to craft potions and protect herself from the human-eating monsters.</p>
 				      	</div>
+				      </a>
 				</div>
 				</div>
 
@@ -81,13 +77,14 @@
 					<img src="{{imgSrc}}" class="img-responsive img-circle margin" alt="Me" width="300" height="300">
 					</div>
 					<div class="col-md-4" >
-					<h3>Hello, I'm {{firstname}}!</h3>
+					<h3>Hello, I'm Jana!</h3>
 					
-					<p align="justify">{{description}} 
+					<p align="justify">I'm a passionate artist and developer who loves crafting worlds and characters, 
+						telling their stories through games. I studied BS Computer Science with Specialization in Software Technology at De La Salle University Manila.
 					</p>
-					<p><span class="glyphicon glyphicon-envelope"></span> {{email}}</p>
-					<p><span class="glyphicon glyphicon-download-alt"></span> <a href="{{resumeLink}}">My Resume ({{resumeLoc}})</a></p>
-					<p><span class="glyphicon glyphicon-map-marker"></span> {{location}}</p>
+					<p><span class="glyphicon glyphicon-envelope"></span> janajaneaustria@gmail.com</p>
+					<p><span class="glyphicon glyphicon-download-alt"></span> <a href="">My Resume(Dropbox)</a></p>
+					<p><span class="glyphicon glyphicon-map-marker"></span> Laguna, Philippines</p>
 					</div>
 					<div class="col-md-2">
 					</div>
@@ -98,76 +95,109 @@
 			<div id="projects" ng-controller="ProjectListController" class="container-fluid ">
 				<div class="row text-center">
 					<div class="page-header">
+						<a name="Projects"></a>
 						<h3>Projects</h3>
 					</div>
+
 				</div>
-					<div ng-repeat="project in projects" class="col-md-4">
-						<div class="thumbnail">
-					      <a ng-click="setViewMode(true);">
-					        <img src="{{project.coverImgSrc}}" alt="{{project.title}}" style="width:100%"></a>
-					        <div class="caption">
-					        <h3>{{project.title}}</h3>
-					          <p align="justify">{{project.shortDescription}}
-							</p>
-							<a ng-click="">view details</a>
-					        </div>
-					      </a>
+				<!--o3o-->
+				<div class="row text-center">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-10 panel-entry">
+						<div class="col-md-5">
+							<a name="RedsAdventure"></a>
+				        	<img src="img/ra1.png" class="img-entry" alt="Red's Adventure" style="width:100%">
 				    	</div>
+				    	<div class="col-md-7">
+					        <h2 class="page-header">Red's Adventure</h2>
+				          	<p class="desc" align="justify">An action game made in Unity for the Global Game Jam 2018.  Assets were made in Clip Studio Paint and animated using Unity. 
+							</p>
+						</div>
+					    <div class="col-md-2">
+					    </div>
+					    <div class="col-md-2">
+					    </div>
+					    <div class="col-md-12">
+					    	<button data-toggle="collapse" data-target="#demo" type="button" class="btn btn-lg btn-info btn-block">View Illustrations</button>
+					    	<div id="demo" class="collapse panel panel-default">
+							<img class="viewImage" src="img/chars.png" width="100%"/>
+							<img class="viewImage" src="img/red.png" width="100%"/>
+							<img class="viewImage" src="img/knight.png" width="100%"/>
+							<img class="viewImage" src="img/pirate.png" width="100%"/>
+							<img class="viewImage" src="img/viking.png" width="100%"/>
+							<img class="viewImage" src="img/wizard.png" width="100%"/>
+							<button data-toggle="collapse" data-target="#demo" type="button" class="btn btn-lg btn-info btn-block">
+							<span class="glyphicon glyphicon-triangle-top"></span>
+							</button>
+							</div>
+					    </div>
+					</div>
+					<div class="col-md-1">
 					</div>
 				</div>
+				<!--o Ao-->
+				<!--o3o-->
+				<div class="row text-center">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-10 panel-entry ">
+						<div class="col-md-5">
+				        	<img src="img/tr1.png" class="img-entry" alt="Tiny Room" style="width:100%">
+				    	</div>
+				    	<div class="col-md-7">
+					        <h2 class="page-header">Tiny Room</h2>
+				          	<p class="desc" align="justify">A miniature tatami-inspired room for GRAPHIX class. ThreeJS library was used in building this 3D room. Props such as the teaset, table, and other furniture were modelled in Blender.
+							</p>
+						</div>
+					    <div class="col-md-2">
+					    </div>
+					    <div class="col-md-2">
+					    </div>
+					    <div class="col-md-12">
+					    	<a href="/tinyroom" role="button" class="btn btn-lg btn-info btn-block">View Demo</a>
+					    </div>
+					</div>
+					<div class="col-md-1">
+					</div>
+				</div>
+				<!--o Ao-->
+				<!--o3o-->
+				<div class="row text-center">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-10 panel-entry">
+						<div class="col-md-5">
+							<a name="TrickyTreats"></a>
+				        	<img src="img/tt1.png" class="img-entry" alt="Tricky Treats" style="width:100%">
+				    	</div>
+				    	<div class="col-md-7">
+					        <h2 class="page-header">Tricky Treats</h2>
+				          	<p class="desc" align="justify">First game I developed in HTML5 back in 2014. Help the alchemist gather ingredients from the forest to craft potions and protect herself from the human-eating monsters. Every combination has its own effect so try out different potions. <a href="/trickytreatsold">Old version of the game can be found here</a> (I prefer the art style of the old one though).
+							</p>
+						</div>
+					    <div class="col-md-2">
+					    </div>
+					    <div class="col-md-2">
+					    </div>
+					    <div class="col-md-12">
+					    	<a href="/trickytreats" role="button" class="btn btn-lg btn-info btn-block">Play Game</a>
+					    </div>
+					</div>
+					<div class="col-md-1">
+					</div>
+				</div>
+				<!--o Ao-->
 				
 			</div> 
 		</div>
-		<div id="details" ng-controller="ViewController" ng-if="viewMode" class="container-fluid" >
-			<div class="row" style="padding-top: 100px;">
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-				</div>
-				<div class="col-md-8">
-					<img src="{{project.featureImgSrc}}" width="100%"/>
-					<div class="page-header">
-					<h3>{{project.title}}</h3>
-					</div>
-				</div>
-				<div class="col-md-2">
-				</div>		
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-				</div>
-				<div class="col-md-8">
-					<p>{{project.fullDescription}}</p>
-					<div ng-repeat ="imageSrc in project.imageFiles" class="viewImage">
-						<img src="{{imageSrc}}" width="100%"/>
-					</div>
-				</div>
-				<div class="col-md-2">
-				</div>	
-			</div>
-				
-		</div>
 	</div>
+	</ng-view>
 	
 	<footer id="myFooter" class="navbar-inverse">
 		<div class="container-fluid text-center">
 			<p class="text-muted">Website created by Jana Austria © 2018</p>
 		</div>
-	</footer>
-	
-	
-	                    
+	</footer>          
   </body>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 </html>

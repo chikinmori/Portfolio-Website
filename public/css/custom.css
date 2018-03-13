@@ -31,12 +31,14 @@
 #projects{
 	margin: 70px;
 }
+.panel-entry{
+	margin-top: 70px;
+}
 .viewImage{
 	padding-top: 100px;
 }
 .img-entry{
-	width:600px;
-	height: 450px;
+	margin:20px;
 }
 .carousel-caption {
     left: 5%;
@@ -45,9 +47,12 @@
     right: auto;
     padding:5px;
 }
-
+.desc{
+	padding:10px;
+}
 body{
 	font-size:17px;
+	background-color:#FAFAFA;
 }
 
 hr{

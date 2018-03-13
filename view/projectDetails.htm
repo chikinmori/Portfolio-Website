@@ -1,0 +1,29 @@
+<div id="details" ng-controller="ViewController" class="container-fluid" >
+	<div class="row" style="padding-top: 100px;">
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<img src="{{project.featureImgSrc}}" width="100%"/>
+			<div class="page-header">
+			<h3>{{project.title}}</h3>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<p>{{project.fullDescription}}</p>
+			<div ng-repeat ="imageSrc in project.imageFiles" class="viewImage">
+				<img src="{{imageSrc}}" width="100%"/>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>	
+	</div>
+		
+</div>

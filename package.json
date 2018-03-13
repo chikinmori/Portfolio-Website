@@ -1,7 +1,7 @@
 {
   "name": "portfoliowebsite",
   "version": "1.0.0",
-  "description": "portfolio website",
+  "description": "A simple portfolio website",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chikinmori/Portfolio-Website"
   }
 }

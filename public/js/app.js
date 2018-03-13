@@ -1,6 +1,5 @@
 var portfolioApp = angular.module("portfolioApp", []);
 
-
 portfolioApp.controller("InformationController", function InformationController($scope){
 	$scope.firstname = "Jana";
 	$scope.lastname = "Austria";
